@@ -1,0 +1,8 @@
+services:
+  app:
+    build: ./
+    labels:
+      traefik.enable: true
+      traefik.http.routers.storyboard-generator.entrypoints: websecure
+      traefik.http.routers.storyboard-generator.rule: Host(`storyboard-generator.louislaureys.com`)
+      traefik.http.routers.storyboard-generator.tls.certresolver: le
