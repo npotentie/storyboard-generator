@@ -1,6 +1,51 @@
 import Head from 'next/head'
+import { useState } from 'react';
+  export default function Home() {
+    const [scene, setScene] = useState({
+      setting: '',
+      camera: '',
+      emotions: '',
+      details: '',
+      lighting: '',
+      colors: '',
+      weather: '',
+      props: '',
+      composition: '',
+      characters: '',
+      clothing: '',
+      objects: '',
+    });
+    
+    const handleChange = (e: { target: { name: any; value: any; }; }) => {
+      const { name, value } = e.target;
+      setScene((prevScene) => ({ ...prevScene, [name]: value }));
+    };
+  
 
-export default function Home() {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+      e.preventDefault();
+      const sceneArray = Object.values(scene);
+      console.log(sceneArray);
+  
+      // Make API call to DALL-E API with sceneArray as prompt
+      const response = await fetch('https://api.openai.com/v1/images/generations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer process.env.DALLE_API_KEY',
+        },
+        body: JSON.stringify({
+          'model': 'image-alpha-001',
+          'prompt': sceneArray.join(' '),
+          'num_images': 1,
+          'size': '512x512',
+        }),
+      });
+  
+      const data = await response.json();
+      console.log(data);
+    };
+  
   return (
     <>
       <Head>
@@ -10,11 +55,138 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="main-content">
-        <p>hoi!</p>
+      <form onSubmit={handleSubmit}>
+      <label>
+        {`Where is the scene taking place? (max 25 characters)`}
+        <input
+          type="text"
+          name="setting"
+          value={scene.setting}
+          onChange={handleChange}
+          maxLength={25}
+        />
+      </label>
+      <label>
+        {`What's the camera angle? (max 25 characters)`}
+        <input
+          type="text"
+          name="camera"
+          value={scene.camera}
+          onChange={handleChange}
+          maxLength={25}
+        />
+      </label>
+      <label>
+        {`How are the characters feeling? (max 30 characters)`}
+        <input
+          type="text"
+          name="emotions"
+          value={scene.emotions}
+          onChange={handleChange}
+          maxLength={30}
+        />
+      </label>
+      <label>
+        {`What small details can be added? (max 30 characters)`}
+        <input
+          type="text"
+          name="details"
+          value={scene.details}
+          onChange={handleChange}
+          maxLength={30}
+        />
+      </label>
+      <label>
+        {`What's the lighting like? (max 20 characters)`}
+        <input
+          type="text"
+          name="lighting"
+          value={scene.lighting}
+          onChange={handleChange}
+          maxLength={20}
+        />
+      </label>
+      <label>
+        {`What's the color palette? (max 20 characters)`}
+        <input
+          type="text"
+          name="colors"
+          value={scene.colors}
+          onChange={handleChange}
+          maxLength={20}
+        />
+      </label>
+      <label>
+        {`What's the weather like? (max 20 characters)`}
+        <input
+          type="text"
+          name="weather"
+          value={scene.weather}
+          onChange={handleChange}
+          maxLength={30}
+        />
+      </label>
+      <label>
+        {`What's in the scene? (max 25 characters)`}
+        <input
+          type="text"
+          name="props"
+          value={scene.props}
+          onChange={handleChange}
+          maxLength={25}
+        />
+      </label>
+      <label>
+        {`What's the overall composition? (max 25 characters)`}
+        <input
+          type="text"
+          name="composition"
+          value={scene.composition}
+          onChange={handleChange}
+          maxLength={25}
+        />
+      </label>
+      <label>
+        {`Who are the characters and what are they doing? (max 40 characters)`}
+        <input
+          type="text"
+          name="characters"
+          value={scene.characters}
+          onChange={handleChange}
+          maxLength={40}
+        />
+      </label>
+      <label>
+        {`What are they wearing? (max 35 characters)`}
+        <input
+          type="text"
+          name="clothing"
+          value={scene.clothing}
+          onChange={handleChange}
+          maxLength={35}
+        />
+      </label>
+      <label>
+        {`What objects are they interacting with? (max 35 characters)`}
+        <input
+          type="text"
+          name="objects"
+          value={scene.objects}
+          onChange={handleChange}
+          maxLength={35}
+        />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
       </main>
       <style jsx>{`
         .main-content {
-          color: red;
+          color: black;
+          font-family: 'Roboto', sans-serif;
+          label {
+            display: block;
+            margin-bottom: 10px;
+          }
           @media only screen and (max-width: 800px) {
             color: blue;
           }
