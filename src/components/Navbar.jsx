@@ -23,9 +23,7 @@ const Navbar = () => {
                 top: 0;
             }
             nav {
-                display: flex;
                 padding: 10px 130px;
-                justify-content: space-between;
                 background-color: #000;
             }
         `}</style>
