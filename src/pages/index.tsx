@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar';
-import Image from "next/image";
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -15,9 +15,11 @@ export default function Home() {
       <main className="main-content">
         <p>hoi!</p>
       </main>
+      <Footer/>
       <style jsx>{`
         .main-content {
           padding: 24px 130px;
+          height: 100vh; // ONLY FOR FILL UP
         }
       `}</style>
     </>
