@@ -1,0 +1,57 @@
+{
+    "setting": {
+        "question": "Where is the scene taking place?",
+        "description": "Describe the location of the scene. For example, 'Beach at sunset'",
+        "limit": 25
+    },
+    "camera": {
+        "question": "What's the camera angle?",
+        "description": "Specify the camera angle to use in the scene. For example, 'Bird's eye view'",
+        "limit": 25
+    },
+    "emotions": {
+        "question": "How are the characters feeling?",
+        "description": "Describe the emotions and facial expressions of the characters. For example, 'a stern expression to convey anger.'",
+        "limit": 30
+    },
+    "details": {
+        "question": "What small details can be added?",
+        "description": "Specify any small details that can be added to make the scene more interesting. For example, 'a cat crossing the street in the background.'",
+        "limit": 30
+    },
+    "lighting": {
+        "question": "What's the lighting like?",
+        "description": "Describe the lighting used in the scene. For example, 'harsh, direct light to create strong shadows.'",
+        "limit": 20
+    },
+    "characters": {
+        "question": "Who are the characters and what are they doing?",
+        "description": "List the character(s) present in the scene and describe their actions. For example, 'John is standing in the doorway, looking out into the rain.'",
+        "limit": 40
+    },
+    "colors": {
+        "question": "What's the color palette?",
+        "description": "Specify the color palette to use in the scene. For example, 'a muted palette with blues and grays.",
+        "limit": 20
+    },
+    "weather": {
+        "question": "What's the weather like?",
+        "description": "Describe the weather in the scene. For example, 'a rainy day.'",
+        "limit": 20
+    },
+    "props": {
+        "question": "What's in the scene?",
+        "description": "Describe any props that can be used in the scene. For example, 'a gun to convey a sense of danger.'",
+        "limit": 25
+    },
+    "composition": {
+        "question": "What's the overall composition?",
+        "description": "Describe the composition of the scene. For example, 'a close-up shot to emphasize the character's facial expression.'",
+        "limit": 25
+    },
+    "clothing": {
+        "question": "What are the characters wearing?",
+        "description": "Describe the clothing of the characters. For example, 'a suit to convey professionalism.'",
+        "limit": 35
+    }
+}
