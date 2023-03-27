@@ -13,7 +13,8 @@ const Navbar = () => {
         </footer>
         <style jsx>{`
             footer {
-                position: sticky;
+                position: fixed;
+                width: 100%;
                 z-index: 30;
                 bottom: 0;
 

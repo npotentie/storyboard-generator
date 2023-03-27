@@ -20,7 +20,7 @@ export default function Home() {
       <style jsx>{`
         .main-content {
           padding: 24px 130px;
-          height: 100vh; // ONLY FOR FILL UP
+          margin: 130px 0px;
         }
       `}</style>
     </>

@@ -18,7 +18,8 @@ const Navbar = () => {
         </header>
         <style jsx>{`
             header {
-                position: sticky;
+                position: fixed;
+                width: 100%;
                 z-index: 30;
                 top: 0;
             }
