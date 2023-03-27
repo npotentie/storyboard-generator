@@ -34,7 +34,7 @@ const Form = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer addthekeyhere',
+          'Authorization': 'Bearer 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',
         },
         body: JSON.stringify({
           'model': 'image-alpha-001',
@@ -45,11 +45,19 @@ const Form = () => {
       });
   
       const data = await response.json();
-      console.log(data);
+      console.log(data.data[0].url);
+      const img = document.createElement("img");
+      img.src = data.data[0].url;
+      // append to main content
+      const main = document.querySelector(".main-content");
+      main?.appendChild(img);
+      
     };
-
+      
     return (
+      
         <form onSubmit={handleSubmit}>
+
           <Question
             question={questions.setting.question}
             description={questions.setting.description}
@@ -91,6 +99,7 @@ const Form = () => {
             name="colors"
             maxLength={questions.colors.limit}
             onChange={handleChange}
+            
           />
           <Question
             question={questions.weather.question}
