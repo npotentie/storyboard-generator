@@ -24,16 +24,17 @@ const Form = () => {
         });
     }
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const sceneArray = Object.values(scene);
-        console.log(scene);
-
-        const response = await fetch('https://api.openai.com/v1/images/generations', {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+      e.preventDefault();
+      const sceneArray = Object.values(scene);
+      console.log(sceneArray);
+  
+      // Make API call to DALL-E API with sceneArray as prompt
+      const response = await fetch('https://api.openai.com/v1/images/generations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer process.env.DALLE_API_KEY',
+          'Authorization': 'Bearer addthekeyhere',
         },
         body: JSON.stringify({
           'model': 'image-alpha-001',
@@ -45,7 +46,7 @@ const Form = () => {
   
       const data = await response.json();
       console.log(data);
-    }
+    };
 
     return (
         <form onSubmit={handleSubmit}>
