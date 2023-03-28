@@ -1,7 +1,7 @@
+import Form from '@/components/form'
 import Head from 'next/head'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -14,11 +14,7 @@ export default function Home() {
       </Head>
       <Navbar/>
       <main className="main-content">
-        <div className="container">
-          <h1 className="title">Introductie</h1>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
-          <Link className="button" href="/form">Start</Link>
-        </div>
+        <Form/>
       </main>
       <Footer/>
       <style jsx>{`

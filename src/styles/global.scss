@@ -19,6 +19,14 @@ body {
   background: white;
 }
 
+.title {
+  height: auto;
+  font-family: Open Sans Bold;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FF6C00
+}
+
 .header {
   width: 380px;
   height: auto;
@@ -57,16 +65,21 @@ input, textarea, select {
   color: #B6BDD0;
 }
 
-.submit-button {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: auto;
   height: 31px;
+  font-family: Open Sans Bold;
+  font-size: 14px;
+  line-height: 19.07px;
+  color: #fff;
   background: #FF6C00;
   border-radius: 12.5px;
   border-style: none;
   padding: 6px 16px;
+  text-decoration: none;
   cursor: pointer;
 }
 

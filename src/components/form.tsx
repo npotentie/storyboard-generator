@@ -34,7 +34,7 @@ const Form = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer addthekeyhere',
+          'Authorization': 'Bearer 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',
         },
         body: JSON.stringify({
           'model': 'image-alpha-001',
@@ -45,7 +45,10 @@ const Form = () => {
       });
   
       const data = await response.json();
-      console.log(data);
+      console.log(data.data[0].url);
+      const img = document.createElement("img");
+      img.src = data.data[0].url;
+      document.body.appendChild(img);
     };
 
     return (
@@ -128,7 +131,7 @@ const Form = () => {
             onChange={handleChange}
           />
           <div className="container">
-            <button type="submit" className="submit-button"><p>Next</p></button>
+            <button type="submit" className="button submit-button"><p>Next</p></button>
           </div>
         </form>
     )
