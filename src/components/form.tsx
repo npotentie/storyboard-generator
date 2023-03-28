@@ -48,11 +48,17 @@ const Form = () => {
       console.log(data.data[0].url);
       const img = document.createElement("img");
       img.src = data.data[0].url;
-      document.body.appendChild(img);
+      img.classList.add("storyboard-image");
+      // append to main content
+      const main = document.querySelector(".main-content");
+      main?.appendChild(img);
+      
     };
-
+      
     return (
+      
         <form onSubmit={handleSubmit}>
+
           <Question
             question={questions.setting.question}
             description={questions.setting.description}
@@ -94,6 +100,7 @@ const Form = () => {
             name="colors"
             maxLength={questions.colors.limit}
             onChange={handleChange}
+            
           />
           <Question
             question={questions.weather.question}
