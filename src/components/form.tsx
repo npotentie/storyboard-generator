@@ -48,6 +48,7 @@ const Form = () => {
       console.log(data.data[0].url);
       const img = document.createElement("img");
       img.src = data.data[0].url;
+      img.classList.add("storyboard-image");
       // append to main content
       const main = document.querySelector(".main-content");
       main?.appendChild(img);
