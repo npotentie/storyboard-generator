@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 import Question from "./question";
 import questions from "../questions.json";
 
@@ -16,6 +17,7 @@ const Form = () => {
         characters: '',
         clothing: '',
     });
+    const [isLoading, setLoading] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setScene({
@@ -30,6 +32,7 @@ const Form = () => {
       console.log(sceneArray);
   
       // Make API call to DALL-E API with sceneArray as prompt
+      setLoading(true)
       const response = await fetch('https://api.openai.com/v1/images/generations', {
         method: 'POST',
         headers: {
@@ -52,6 +55,7 @@ const Form = () => {
       // append to main content
       const main = document.querySelector(".main-content");
       main?.appendChild(img);
+      setLoading(false)
       
     };
       
@@ -138,7 +142,13 @@ const Form = () => {
             onChange={handleChange}
           />
           <div className="container">
-            <button type="submit" className="button submit-button"><p>Next</p></button>
+            <button type="submit" className="button submit-button" disabled={isLoading}>
+              {isLoading ? (
+                <Image src="/loader.svg" alt="Loading" width={20} height={20} />
+              ) : (
+                "Generate"
+              )}
+            </button>
           </div>
         </form>
     )
