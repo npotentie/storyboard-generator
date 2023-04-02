@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-const Logo = ({ props }) => {
+const Logo = ({ width, height }: { width: number; height: number }) => {
   return (
     <Image
       src="/../public/logo.png"
       alt="Logo NPO"
-      width={props.width}
-      height={props.height}
+      width={width}
+      height={height}
     />
   );
 };
