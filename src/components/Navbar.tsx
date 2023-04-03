@@ -2,17 +2,14 @@ import Link from "next/link";
 import Logo from "./Logo";
 
 const Navbar = () => {
-    let logoProps = {
-        width:"80",
-        height:"80"
-    }
+
 
     return (
         <>
         <header>
         <nav className={`nav`}>
             <Link href={"/"}>
-                <Logo props={logoProps}/>
+                <Logo width={80} height={80}/>
             </Link>
         </nav>
         </header>
