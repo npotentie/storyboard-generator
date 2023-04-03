@@ -32,6 +32,7 @@ const Form = () => {
       let gptPrompt = `
 You are an AI that generates prompts to be used to generate a single scene image in a storyboard using dall-e.
 
+Requirements:
  - The prompt should be a maximum of 800 characters, and is should be in english.
  - The prompt should be generated from answers to a questionaire.
  - The prompt should depict people if they're specified, not characters or figures.
