@@ -20,7 +20,6 @@ export default function Home() {
           <Link className="button" href="/form">Start</Link>
         </div>
       </main>
-      <Footer/>
       <style jsx>{`
         .main-content {
           padding: 24px 130px;

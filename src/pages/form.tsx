@@ -2,9 +2,15 @@ import Form from '@/components/form'
 import SectionHeader from '@/components/SectionHeader';
 import Head from 'next/head'
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { useState } from 'react';
+import StoryboardImage from '@/components/StoryboardImage';
 
 export default function Home() {
+  const [images, setImages] = useState<string[]>([]);
+
+  const handleCallback = (childData: string[]) => {
+    setImages(childData);
+  }
   return (
     <>
       <Head>
@@ -16,10 +22,14 @@ export default function Home() {
       <Navbar/>
       <main className="main-content">
         <SectionHeader title='Questions'/>
-        <Form/>
+        <Form handleCallback={handleCallback}/>
         <SectionHeader title='Scene images'/>
+        {images !== null} {
+          images.map((image, index) => (
+            <StoryboardImage src={image} num={index} key={index}/>
+          ))
+        }
       </main>
-      <Footer/>
       <style jsx>{`
         .main-content {
           padding: 24px 130px;

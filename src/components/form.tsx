@@ -3,7 +3,7 @@ import Image from "next/image";
 import Question from "./question";
 import questions from "../questions.json";
 
-const Form = () => {
+const Form = ({handleCallback} : {handleCallback : Function}) => {
     const [scene, setScene] = useState(
       Object.fromEntries(Object.entries(questions).map(([questionKey]) => [questionKey, ""]))
     );
@@ -32,21 +32,13 @@ const Form = () => {
         body: JSON.stringify({
           'model': 'image-alpha-001',
           'prompt': sceneArray.join(' '),
-          'num_images': 1,
+          'num_images': 4,
           'size': '512x512',
         }),
       });
-  
       const data = await response.json();
-      console.log(data.data[0].url);
-      const img = document.createElement("img");
-      img.src = data.data[0].url;
-      img.classList.add("storyboard-image");
-      // append to main content
-      const main = document.querySelector(".main-content");
-      main?.appendChild(img);
-      setLoading(false)
-      
+      setLoading(false);
+      return handleCallback(data.data.map((image: { url: string; }) => image.url));
     };
       
     return (
