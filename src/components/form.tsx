@@ -31,9 +31,13 @@ const Form = () => {
 
       let gptPrompt = `
 You are an AI that generates prompts to be used to generate a single scene image in a storyboard using dall-e.
-The prompt should be a maximum of 800 characters, and is should be in english.
-The prompt should be generated from answers to a questionaire.
-The prompt should depict people if they're specified, not characters.
+
+ - The prompt should be a maximum of 800 characters, and is should be in english.
+ - The prompt should be generated from answers to a questionaire.
+ - The prompt should depict people if they're specified, not characters or figures.
+ - The prompt should aim to create a pholorealistic image.
+ - After prompt you should specify the camera settings used, like this: "Camera: Sigma {number}mm f/{number}"
+ - You should determine the camera settings based on the questionaire, and replcae the {number}s yourself
       
 Here is the questionaire:
       `
@@ -79,7 +83,7 @@ The generated prompt (in english):
       
       const gptData = await gptResponse.json();
       console.log(gptPrompt)
-      console.log(gptData)
+      console.log(gptData.choices[0].text,)
   
       // Make API call to DALL-E API with sceneArray as prompt
       const response = await fetch('https://api.openai.com/v1/images/generations', {
@@ -90,7 +94,7 @@ The generated prompt (in english):
         },
         body: JSON.stringify({
           'model': 'image-alpha-001',
-          'prompt': 'A realistic image of: ' + gptData.choices[0].text,
+          'prompt': gptData.choices[0].text,
           'num_images': 1,
           'size': '512x512',
         }),
