@@ -16,7 +16,10 @@ export default function Home() {
       <main className="main-content">
         <div className="container">
           <h1 className="title">Introductie</h1>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
+          <p>Welkom bij onze handige nieuwe applicatie! Met deze app kunt u eenvoudig visuals genereren voor uw storyboard, gebaseerd op de informatie die u ons verstrekt via een eenvoudige vragenlijst. Vul alle vragen van de vragenlijst in en wij doen de rest voor u.</p>
+          <p>Onze app is speciaal ontworpen voor programmeurs en makers van audiovisuele content om snel en efficiënt visuals te genereren. U hoeft geen tijd meer te verspillen aan het zoeken naar geschikte afbeeldingen en illustraties. Laat onze app het werk voor u doen, zodat u zich kunt concentreren op het vertellen van uw verhaal.</p>
+          <p>Met onze app kunt u zich richten op wat echt belangrijk is: het vertellen van uw verhaal. Probeer onze app vandaag nog uit en ervaar hoe gemakkelijk het is om visuals te genereren voor uw storyboard!</p>
+
           <Link className="button" href="/form">Start</Link>
         </div>
       </main>
@@ -24,6 +27,16 @@ export default function Home() {
         .main-content {
           padding: 24px 130px;
           margin: 130px 0px;
+        }
+        .container {
+          margin: 0 auto;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        .main-content p {
+          font-size: 14px;
+          font-family: Open Sans Regular;
+          line-height: 19.07px;
         }
       `}</style>
     </>

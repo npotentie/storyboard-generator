@@ -1,57 +1,57 @@
 {
     "setting": {
-        "question": "1. Where is the scene taking place?",
-        "description": "Describe the location of the scene. For example, 'Beach at sunset'",
-        "limit": 50
+        "question": "Waar vindt de scène plaats?",
+        "description": "Beschrijf de locatie van de scène. Bijvoorbeeld, 'strand bij zonsondergang'.",
+        "limit": 150
     },
     "camera": {
-        "question": "2. What's the camera angle?",
-        "description": "Specify the camera angle to use in the scene. For example, 'Bird's eye view'",
-        "limit": 25
+        "question": "Wat is de camerahoek?",
+        "description": "Specificeer de camerahoek die gebruikt moet worden in de scène. Bijvoorbeeld, 'vogelperspectief'.",
+        "limit": 150
     },
     "emotions": {
-        "question": "3. How are the characters feeling?",
-        "description": "Describe the emotions and facial expressions of the characters. For example, 'a stern expression to convey anger.'",
-        "limit": 50
+        "question": "Hoe voelen de personages zich?",
+        "description": "Beschrijf de emoties en gezichtsuitdrukkingen van de personages. Bijvoorbeeld, 'een strenge uitdrukking om boosheid over te brengen'.",
+        "limit": 150
     },
     "details": {
-        "question": "4. What small details can be added?",
-        "description": "Specify any small details that can be added to make the scene more interesting. For example, 'a cat crossing the street in the background.'",
-        "limit": 75
+        "question": "Welke kleine details kunnen worden toegevoegd?",
+        "description": "Specificeer eventuele kleine details die kunnen worden toegevoegd om de scène interessanter te maken. Bijvoorbeeld, 'een kat die de straat oversteekt op de achtergrond'.",
+        "limit": 150
     },
     "lighting": {
-        "question": "5. What's the lighting like?",
-        "description": "Describe the lighting used in the scene. For example, 'harsh, direct light to create strong shadows.'",
-        "limit": 50
+        "question": "Hoe is het licht?",
+        "description": "Beschrijf het licht dat gebruikt wordt in de scène. Bijvoorbeeld, 'hard, direct licht om sterke schaduwen te creëren'.",
+        "limit": 150
     },
     "characters": {
-        "question": "6. Who are the characters and what are they doing?",
-        "description": "List the character(s) present in the scene and describe their actions. For example, 'John is standing in the doorway, looking out into the rain.'",
-        "limit": 75
+        "question": "Wie zijn de personages en wat doen ze?",
+        "description": "Noem de personages die aanwezig zijn in de scène en beschrijf hun acties. Bijvoorbeeld, 'John staat in de deuropening en kijkt naar buiten in de regen'.",
+        "limit": 150
     },
     "colors": {
-        "question": "7. What's the color palette?",
-        "description": "Specify the color palette to use in the scene. For example, 'a muted palette with blues and grays.",
-        "limit": 25
+        "question": "Wat is het kleurenpalet?",
+        "description": "Specificeer het kleurenpalet dat gebruikt moet worden in de scène. Bijvoorbeeld, 'een gedempt palet met blauwen en grijstinten'.",
+        "limit": 150
     },
     "weather": {
-        "question": "8. What's the weather like?",
-        "description": "Describe the weather in the scene. For example, 'a rainy day.'",
-        "limit": 25
+        "question": "Hoe is het weer?",
+        "description": "Beschrijf het weer in de scène. Bijvoorbeeld, 'een regenachtige dag'.",
+        "limit": 150
     },
     "props": {
-        "question": "9. What's in the scene?",
-        "description": "Describe any props that can be used in the scene. For example, 'a gun to convey a sense of danger.'",
-        "limit": 75
+        "question": "Wat is er in de scène?",
+        "description": "Beschrijf eventuele rekwisieten die gebruikt kunnen worden in de scène. Bijvoorbeeld, 'een pistool om een gevoel van gevaar over te brengen'.",
+        "limit": 150
     },
     "composition": {
-        "question": "10. What's the overall composition?",
-        "description": "Describe the composition of the scene. For example, 'a close-up shot to emphasize the character's facial expression.'",
-        "limit": 50
+        "question": "Wat is de algehele compositie?",
+        "description": "Beschrijf de compositie van de scène. Bijvoorbeeld, 'een close-up shot om de gezichtsuitdrukking van het personage te benadrukken'.",
+        "limit": 150
     },
     "clothing": {
-        "question": "11. What are the characters wearing?",
-        "description": "Describe the clothing of the characters. For example, 'a suit to convey professionalism.'",
-        "limit": 50
+        "question": "Wat dragen de personages?",
+        "description": "Beschrijf de kleding van de personages. Bijvoorbeeld, 'een pak om professionaliteit over te brengen'.",
+        "limit": 150
     }
 }
