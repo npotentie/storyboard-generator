@@ -1,4 +1,5 @@
 import Form from '@/components/form'
+import SectionHeader from '@/components/SectionHeader';
 import Head from 'next/head'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -14,7 +15,9 @@ export default function Home() {
       </Head>
       <Navbar/>
       <main className="main-content">
+        <SectionHeader title='Questions'/>
         <Form/>
+        <SectionHeader title='Scene images'/>
       </main>
       <Footer/>
       <style jsx>{`
