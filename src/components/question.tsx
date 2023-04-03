@@ -32,7 +32,7 @@ const Question: React.FC<QuestionProps> = ({ question, description, name, maxLen
                 maxLength={maxLength}
                 ref={inputRef}
                 className="input-field"
-                placeholder={`Max ${maxLength} characters.`}
+                placeholder={`Max ${maxLength} karakters.`}
             />
             </label>
         </div>

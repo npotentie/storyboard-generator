@@ -27,7 +27,6 @@ const Form = ({handleCallback} : {handleCallback : Function}) => {
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
       e.preventDefault();
       const sceneArray = Object.values(scene);
-      console.log(sceneArray);
 
       let gptPrompt = `
 You are an AI that generates prompts to be used to generate a single scene image in a storyboard using dall-e.
@@ -83,8 +82,6 @@ The generated prompt (in english):
       });
       
       const gptData = await gptResponse.json();
-      console.log(gptPrompt)
-      console.log(gptData.choices[0].text,)
   
       // Make API call to DALL-E API with sceneArray as prompt
       const response = await fetch('https://api.openai.com/v1/images/generations', {

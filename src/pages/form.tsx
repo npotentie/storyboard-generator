@@ -7,7 +7,6 @@ import StoryboardImage from '@/components/StoryboardImage';
 
 export default function Home() {
   const [images, setImages] = useState<string[]>([]);
-
   const handleCallback = (childData: string[]) => {
     setImages(childData);
   }
@@ -21,19 +20,33 @@ export default function Home() {
       </Head>
       <Navbar/>
       <main className="main-content">
-        <SectionHeader title='Questions'/>
+        <SectionHeader title='Vragen'/>
         <Form handleCallback={handleCallback}/>
-        <SectionHeader title='Scene images'/>
-        {images !== null} {
-          images.map((image, index) => (
-            <StoryboardImage src={image} num={index} key={index}/>
-          ))
+        {images.length !== 0 &&
+          <>
+            <SectionHeader title='Scène beelden' description="Hieronder vind u de afbeeldingen terug die aan de hand van de antwoorden op de vragenlijst zijn gegenereerd. Deze afbeeldingen kunt u downloaden om te gebruiken voor uw storyboard."/>
+            <div className="image-container">
+              {images.map((image, index) => (
+                <StoryboardImage src={image} num={index} key={index}/>
+              ))}
+            </div>
+          </>
         }
       </main>
       <style jsx>{`
         .main-content {
           padding: 24px 130px;
           margin: 130px 0px;
+        }
+        .image-container {
+          display: flex;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 16px;
         }
       `}</style>
     </>
